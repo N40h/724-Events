@@ -15,6 +15,7 @@ const Form = ({ onSuccess, onError }) => {
 		async (evt) => {
 			evt.preventDefault();
 
+			// Form validation
 			const form = evt.target;
 			const fields = form.querySelectorAll('input[name], textarea[name]');
 			const selectionField = form.querySelector('.Select');
@@ -45,7 +46,7 @@ const Form = ({ onSuccess, onError }) => {
 			try {
 				await mockContactApi();
 				setSending(false);
-				onSuccess();
+				onSuccess(); // Added onSuccess prop
 			} catch (err) {
 				setSending(false);
 				onError(err);

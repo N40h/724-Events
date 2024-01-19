@@ -16,9 +16,9 @@ const Select = ({
 	const [value, setValue] = useState();
 	const [collapsed, setCollapsed] = useState(true);
 	const changeValue = (newValue) => {
-		onChange(newValue);
+		onChange(newValue); // Add the newValue callback to the onChange event
 		setValue(newValue);
-		setCollapsed(!collapsed);
+		setCollapsed(!collapsed); // Return the opposite of the default collapsed state
 	};
 	return (
 		<div className={`SelectContainer ${type}`} data-testid="select-testid">
