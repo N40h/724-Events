@@ -13,7 +13,7 @@ const Slider = () => {
 	const nextCard = () => {
 		if (byDateDesc !== undefined) {
 			setTimeout(
-				() => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0), // index < byDateDesc.length - 1, if the index is at the last position it will reset to 0
+				() => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
 				5000
 			);
 		}
@@ -47,7 +47,8 @@ const Slider = () => {
 									key={`${_.title}`}
 									type="radio"
 									name="radio-button"
-									checked={index === radioIdx} // use index state to sync the dots with the slider's display
+									checked={index === radioIdx}
+									// use index state to sync the dots with the slider's display
 									readOnly
 								/>
 							))}

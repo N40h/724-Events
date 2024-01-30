@@ -17,16 +17,15 @@ const EventList = () => {
 		(!type
 			? data?.events
 			: data?.events.filter((event) => !type || event.type === type)) || []
-	) // Ternary operator on the data based on the type of event
-		.filter((_, index) => {
-			if (
-				(currentPage - 1) * PER_PAGE <= index &&
-				PER_PAGE * currentPage > index
-			) {
-				return true;
-			}
-			return false;
-		});
+	).filter((_, index) => {
+		if (
+			(currentPage - 1) * PER_PAGE <= index &&
+			PER_PAGE * currentPage > index
+		) {
+			return true;
+		}
+		return false;
+	});
 	const changeType = (evtType) => {
 		setCurrentPage(1);
 		setType(evtType);
